@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "450570676515",
+    "project_id": "qubi-d3588",
+    "storage_bucket": "qubi-d3588.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450570676515:android:120a70b77e3afa6523c496",
+        "android_client_info": {
+          "package_name": "com.example.qubi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450570676515-t4n0fgohr2s3ed9ul8dtf3qqvf0ufu1v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.qubi",
+            "certificate_hash": "3f1b5bd7e4b90406c4a4d6c7752e6c762dd1c29f"
+          }
+        },
+        {
+          "client_id": "450570676515-sok183f3kcqde3r259v1944osb1qv19b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHTeOdFk1BlxFirAU1eFHjonV7YjrlpO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450570676515-sok183f3kcqde3r259v1944osb1qv19b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

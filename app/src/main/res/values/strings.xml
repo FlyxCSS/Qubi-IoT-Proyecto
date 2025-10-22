@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Qubi</string>
+    <string name="facebook_app_id">3608422865955330</string>
+    <string name="fb_login_protocol_scheme">fb3608422865955330</string>
+    <string name="facebook_client_token">48b1e5f13936e7cc7cfdf3f5d15932a3</string>
+    <string name="default_web_client_id">450570676515-sok183f3kcqde3r259v1944osb1qv19b.apps.googleusercontent.com</string>
+
+</resources>
