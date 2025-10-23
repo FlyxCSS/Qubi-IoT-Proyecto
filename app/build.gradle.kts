@@ -45,4 +45,5 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.2.0"))
     implementation("com.firebaseui:firebase-ui-auth:9.0.0")
     implementation("com.facebook.android:facebook-login:latest.release")
+    implementation("androidx.cardview:cardview:1.0.0")
 }
