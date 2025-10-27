@@ -23,7 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -49,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+        // 👉 Si ya hay sesión iniciada, ir directamente a NuevaPagina
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            updateUI(currentUser);
+        }
 
         // --- FACEBOOK LOGIN ---
         mCallbackManager = CallbackManager.Factory.create();
@@ -154,20 +159,22 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // --- ACTUALIZA LA INTERFAZ Y VA A NUEVAPAGINA ---
     private void updateUI(FirebaseUser user) {
         if (user != null) {
             String username = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
-            String uid = user.getUid();
-
-            Log.d(TAG, "Usuario autenticado: " + username + " (" + email + ")");
             Toast.makeText(this, "Bienvenido, " + username, Toast.LENGTH_SHORT).show();
+
+            // Ir a la nueva página
+            Intent intent = new Intent(MainActivity.this, NuevaPagina.class);
+            startActivity(intent);
+            finish(); // Cierra la pantalla de login
         } else {
             Log.d(TAG, "El usuario no está autenticado.");
         }
     }
 
+    // --- CERRAR SESIÓN ---
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
